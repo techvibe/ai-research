@@ -1,0 +1,162 @@
+{
+  "criteria": [
+    "Factual traceability",
+    "Portability",
+    "Decision usefulness",
+    "Operating complexity",
+    "Honest completion state",
+    "Review independence when needed"
+  ],
+  "options": [
+    {
+      "id": "O1",
+      "name": "One prompt and manual edits",
+      "baseline": true,
+      "benefit": "Fastest setup for a short, low-consequence note.",
+      "cost": "No durable coordination of evidence and artifacts."
+    },
+    {
+      "id": "O2",
+      "name": "Human checklist with ordinary documents",
+      "baseline": false,
+      "benefit": "Simple and useful for occasional architecture decisions.",
+      "cost": "Cross-artifact updates and provenance remain manual."
+    },
+    {
+      "id": "O3",
+      "name": "File-based loop and structural gates",
+      "baseline": false,
+      "benefit": "Portable, resumable records and repeatable checks.",
+      "cost": "More artifacts, local operations and review effort."
+    },
+    {
+      "id": "O4",
+      "name": "Managed workflow and approval service",
+      "baseline": false,
+      "benefit": "Potential central access control, concurrency and enterprise integrations.",
+      "cost": "Additional service ownership, integration and migration work."
+    }
+  ],
+  "records": [
+    {
+      "id": "D1",
+      "question": "How should a substantial recurring architecture decision retain its evidence and reasoning?",
+      "selected_option": "O3",
+      "rationale": "Separate canonical records can be carried between hosts and reused by paper and deck generation.",
+      "tradeoffs": [
+        "JSON records add authoring overhead",
+        "A checklist may be sufficient for infrequent short work"
+      ],
+      "claim_ids": [
+        "CL6",
+        "CL7",
+        "CL9"
+      ],
+      "strongest_objection": "The maintenance cost may exceed avoided inconsistencies.",
+      "reversal_trigger": "A pilot shows equal or worse material defects and more total work than O2.",
+      "validation_plan": "Compare matched briefs using O2 and O3; count material defects and active author/reviewer time."
+    },
+    {
+      "id": "D2",
+      "question": "How should review authorize completion?",
+      "selected_option": "O3",
+      "rationale": "Use structural gates plus declared semantic review, with changed bytes invalidating the prior review.",
+      "tradeoffs": [
+        "Same-model review remains correlated",
+        "Hashes establish byte identity, not correctness or authority"
+      ],
+      "claim_ids": [
+        "CL3",
+        "CL6",
+        "CL8"
+      ],
+      "strongest_objection": "An authoring agent can produce flattering review declarations.",
+      "reversal_trigger": "The use case requires independent enforcement or reviewer identity guarantees.",
+      "validation_plan": "Inject broken references and stale reviews locally; evaluate substantive defects with separate readers before operational adoption."
+    },
+    {
+      "id": "D3",
+      "question": "How should the workflow remain portable?",
+      "selected_option": "O3",
+      "rationale": "Use files and explicit prompts, with native instruction files as thin conveniences.",
+      "tradeoffs": [
+        "Hosts have different tool capabilities",
+        "Copy/paste operation is slower when shell access is absent"
+      ],
+      "claim_ids": [
+        "CL4",
+        "CL5",
+        "CL9"
+      ],
+      "strongest_objection": "The apparent portability may fail in real host sessions.",
+      "reversal_trigger": "Repeated host sessions cannot resume the artifacts or produce the required exports.",
+      "validation_plan": "Run the same small brief in Claude Code and the selected Copilot host; test resumption and all required outputs."
+    }
+  ],
+  "challenges": [
+    {
+      "decision_id": "D1",
+      "attack": "The loop may simply add bureaucracy.",
+      "falsifier": "No reduction in material contradictions or review effort versus the checklist.",
+      "method": "Matched-brief reader evaluation",
+      "status": "planned",
+      "result": "Not yet performed.",
+      "consequence": "Recommend a bounded pilot, not broad adoption.",
+      "blocks_decision": false,
+      "unresolved": true
+    },
+    {
+      "decision_id": "D2",
+      "attack": "A changed source or missing output could be called complete.",
+      "falsifier": "A stale review or missing output passes the associated structural gate.",
+      "method": "Local regression tests with deliberate defects",
+      "status": "executed",
+      "result": "Seventeen local regression checks passed, including unsupported facts, invalid C4 scopes, stale diagrams/reviews, missing outputs and bounded transitions. See VALIDATION.md.",
+      "consequence": "Mechanical failure cases covered by these tests are rejected. Semantic accuracy and host integration remain separate validation work.",
+      "blocks_decision": false,
+      "unresolved": false
+    },
+    {
+      "decision_id": "D2",
+      "attack": "Local files cannot enforce independent approval.",
+      "falsifier": "The publication claims tamper-proof assurance despite a shared writer.",
+      "method": "Inspect the permissions and source architecture",
+      "status": "executed",
+      "result": "The writer can edit the run and the coordinator; no independent authority exists.",
+      "consequence": "The paper limits completion to ready for user review and recommends O4 if independent enforcement is needed.",
+      "blocks_decision": false,
+      "unresolved": false
+    },
+    {
+      "decision_id": "D3",
+      "attack": "Documented adapters may not work in a real configured host.",
+      "falsifier": "The host cannot load instructions, resume, retrieve evidence or render required outputs.",
+      "method": "End-to-end host acceptance runs",
+      "status": "planned",
+      "result": "Claude Code and Copilot sessions have not been run here.",
+      "consequence": "Explicitly document an untested integration boundary and retain the generic prompt fallback.",
+      "blocks_decision": false,
+      "unresolved": true
+    }
+  ],
+  "assumptions": [
+    {
+      "statement": "One writer owns each local run.",
+      "impact": "Concurrent coordinators could conflict.",
+      "validation": "Attempt concurrent use only after adding process locking.",
+      "owner": "Kit maintainer"
+    },
+    {
+      "statement": "The host can retrieve sources and write files.",
+      "impact": "Without those capabilities the run is a text or conditional draft.",
+      "validation": "Inspect capabilities at frame stage.",
+      "owner": "Run author"
+    },
+    {
+      "statement": "Recurring substantial documents justify structured records.",
+      "impact": "Small tasks may be cheaper with O1 or O2.",
+      "validation": "Compare active work and defects in a bounded pilot.",
+      "owner": "Adoption sponsor"
+    }
+  ]
+}

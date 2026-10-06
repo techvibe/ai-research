@@ -1,0 +1,65 @@
+{
+  "source_fingerprint": "",
+  "reviewer": "",
+  "mode": "single_model",
+  "limitations": [
+    "Replace with actual review limitations."
+  ],
+  "checks": {
+    "source_entailment": {
+      "pass": false,
+      "evidence": ""
+    },
+    "first_person_integrity": {
+      "pass": false,
+      "evidence": ""
+    },
+    "standalone_reader": {
+      "pass": false,
+      "evidence": ""
+    },
+    "alternatives_fair": {
+      "pass": false,
+      "evidence": ""
+    },
+    "disconfirmation_substantive": {
+      "pass": false,
+      "evidence": ""
+    },
+    "architecture_feasible": {
+      "pass": false,
+      "evidence": ""
+    },
+    "paper_slide_consistency": {
+      "pass": false,
+      "evidence": ""
+    },
+    "diagrams_readable": {
+      "pass": false,
+      "evidence": ""
+    }
+  },
+  "scores": {
+    "evidence": {
+      "score": 0,
+      "evidence": ""
+    },
+    "reasoning": {
+      "score": 0,
+      "evidence": ""
+    },
+    "architecture": {
+      "score": 0,
+      "evidence": ""
+    },
+    "clarity": {
+      "score": 0,
+      "evidence": ""
+    },
+    "cohesion": {
+      "score": 0,
+      "evidence": ""
+    }
+  },
+  "findings": []
+}

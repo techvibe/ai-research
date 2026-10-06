@@ -1,0 +1,178 @@
+{
+  "thesis": "I propose a portable architecture loop whose recommendation, paper and slides share the same evidence and decisions.",
+  "tension": "A polished publication can still lack a defensible choice or contain contradictions.",
+  "recommendation": "Pilot the file-based loop for substantial recurring work; keep simpler methods for smaller tasks.",
+  "decision_ask": "Select one representative architecture brief, a checklist baseline and explicit acceptance criteria for a bounded comparison.",
+  "running_example": "A source correction invalidates a pivotal capability claim after the draft is written.",
+  "glossary": {
+    "Canonical record": "The authoritative record from which other artifacts are derived",
+    "Fingerprint": "A hash identifying the exact current canonical bytes",
+    "Semantic review": "A substantive assessment of meaning, evidence and decision quality",
+    "Idempotency": "Whether repeating an operation changes its effect"
+  },
+  "beats": [
+    {
+      "id": "B1",
+      "takeaway": "Shared records can make the recommendation reviewable.",
+      "paper_section": "recommendation",
+      "slide_ids": [
+        "P1",
+        "P2"
+      ],
+      "claim_ids": [
+        "CL7",
+        "CL11"
+      ],
+      "decision_ids": [
+        "D1"
+      ],
+      "view_ids": []
+    },
+    {
+      "id": "B2",
+      "takeaway": "I derive the loop from explicit invariants.",
+      "paper_section": "context",
+      "slide_ids": [
+        "P3"
+      ],
+      "claim_ids": [
+        "CL3",
+        "CL7"
+      ],
+      "decision_ids": [
+        "D1",
+        "D2"
+      ],
+      "view_ids": []
+    },
+    {
+      "id": "B9",
+      "takeaway": "Documented adapters provide a starting point; live host behavior still needs validation.",
+      "paper_section": "evidence",
+      "slide_ids": [
+        "P11"
+      ],
+      "claim_ids": [
+        "CL4",
+        "CL5",
+        "CL9"
+      ],
+      "decision_ids": [
+        "D3"
+      ],
+      "view_ids": []
+    },
+    {
+      "id": "B3",
+      "takeaway": "The process must earn its overhead against simpler options.",
+      "paper_section": "choices",
+      "slide_ids": [
+        "P4",
+        "P5"
+      ],
+      "claim_ids": [
+        "CL7",
+        "CL8",
+        "CL11"
+      ],
+      "decision_ids": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "view_ids": []
+    },
+    {
+      "id": "B4",
+      "takeaway": "The host performs the intellectual work; files retain its evidence.",
+      "paper_section": "architecture",
+      "slide_ids": [
+        "P6",
+        "P7",
+        "P14",
+        "P15"
+      ],
+      "claim_ids": [
+        "CL1",
+        "CL6",
+        "CL9",
+        "CL10"
+      ],
+      "decision_ids": [
+        "D1",
+        "D3"
+      ],
+      "view_ids": [
+        "V1",
+        "V2",
+        "V3",
+        "V4"
+      ]
+    },
+    {
+      "id": "B5",
+      "takeaway": "Changed evidence must propagate into both publications.",
+      "paper_section": "mechanisms",
+      "slide_ids": [
+        "P8",
+        "P9"
+      ],
+      "claim_ids": [
+        "CL3",
+        "CL6",
+        "CL8"
+      ],
+      "decision_ids": [
+        "D2"
+      ],
+      "view_ids": []
+    },
+    {
+      "id": "B6",
+      "takeaway": "Both formats must preserve the same conditions.",
+      "paper_section": "story",
+      "slide_ids": [
+        "P10"
+      ],
+      "claim_ids": [
+        "CL7"
+      ],
+      "decision_ids": [
+        "D1"
+      ],
+      "view_ids": []
+    },
+    {
+      "id": "B7",
+      "takeaway": "I would adopt only after a bounded comparison.",
+      "paper_section": "delivery",
+      "slide_ids": [
+        "P12"
+      ],
+      "claim_ids": [
+        "CL11"
+      ],
+      "decision_ids": [
+        "D1",
+        "D3"
+      ],
+      "view_ids": []
+    },
+    {
+      "id": "B8",
+      "takeaway": "The decision is to pilot within explicit limits.",
+      "paper_section": "limits",
+      "slide_ids": [
+        "P13"
+      ],
+      "claim_ids": [
+        "CL8",
+        "CL11"
+      ],
+      "decision_ids": [
+        "D2"
+      ],
+      "view_ids": []
+    }
+  ]
+}

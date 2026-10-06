@@ -1,0 +1,13 @@
+%% model-sha256: c6a42a18801e616c658a9046b5c8d31b48d8dbbefd3051923a7f8248449a902c
+%% C1 · System context
+%% Scope: Loop
+%% Person = accountable author. Dark blue = kit. Gray = external systems. Arrows describe directed interactions.
+flowchart TB
+    Author["Architecture author (person) - Owns the decision and reviews outputs"]
+    Host["Host agent (external) - Researches, designs, writes and reviews"]
+    Loop["Architecture Loop (system) - Coordinates evidence and publication records"]
+    Sources["Primary sources (external) - Provide evidence and counterevidence"]
+  Author -->|"Defines the decision"| Host
+  Host -->|"Retrieves supporting and contrary evidence"| Sources
+  Host -->|"Creates and evaluates artifacts"| Loop
+  Loop -->|"Provides reviewable paper and deck"| Author

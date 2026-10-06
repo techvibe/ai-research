@@ -1,0 +1,336 @@
+{
+  "title": "Architecture Loop: make the decision reviewable",
+  "subtitle": "A portable architecture research and publication workflow \u00b7 6 October 2026",
+  "slides": [
+    {
+      "id": "P1",
+      "title": "Make the architecture decision reviewable",
+      "takeaway": "I propose one shared record behind the paper, slides and diagrams.",
+      "paper_section": "recommendation",
+      "claim_ids": [
+        "CL7",
+        "CL11"
+      ],
+      "speaker_notes": "This is a worked example about the loop itself. The objective is a defensible decision, not a promise that more agent steps automatically improve quality. I recommend a bounded pilot before broader adoption.",
+      "view_ids": [],
+      "cards": [
+        {
+          "heading": "Evidence",
+          "body": "Show what is known, what is inferred and what remains uncertain."
+        },
+        {
+          "heading": "Decision",
+          "body": "State the choice, its strongest rival and what would reverse it."
+        },
+        {
+          "heading": "Story",
+          "body": "Explain the same recommendation in two useful forms."
+        }
+      ],
+      "kicker": "ARCHITECTURE LOOP  /  WORKED EXAMPLE"
+    },
+    {
+      "id": "P2",
+      "title": "Polish alone does not explain why to choose",
+      "takeaway": "The failure I target is lost reasoning and drift between artifacts.",
+      "paper_section": "recommendation",
+      "claim_ids": [
+        "CL7"
+      ],
+      "speaker_notes": "Consider a changed vendor capability claim after a deck has been drafted. This is a design scenario, not an observed incident rate. If the old claim survives on a slide, attractive presentation cannot repair the decision.",
+      "view_ids": [],
+      "cards": [
+        {
+          "heading": "A claim changes",
+          "body": "The source no longer supports a pivotal capability."
+        },
+        {
+          "heading": "A decision depends on it",
+          "body": "The chosen design may now require a different mechanism."
+        },
+        {
+          "heading": "Both outputs must change",
+          "body": "The paper and presentation need the same correction."
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "title": "Start with invariants, then derive the process",
+      "takeaway": "I ask what must remain true before I select a tool or pattern.",
+      "paper_section": "context",
+      "claim_ids": [
+        "CL3",
+        "CL7"
+      ],
+      "speaker_notes": "An invariant is a condition that should hold throughout the work. For this loop, no invented evidence, honest uncertainty, valid diagram nesting and consistent outputs determine the needed records and checks.",
+      "view_ids": [],
+      "bullets": [
+        "Every factual claim has inspectable support.",
+        "Every pivotal choice has a credible alternative and reversal trigger.",
+        "Every diagram and slide preserves the same architecture and conditions.",
+        "Changed canonical content requires another review."
+      ]
+    },
+    {
+      "id": "P4",
+      "title": "A structured loop must earn its extra work",
+      "takeaway": "For a small task, a simple checklist may be the better design.",
+      "paper_section": "choices",
+      "claim_ids": [
+        "CL7",
+        "CL11"
+      ],
+      "speaker_notes": "I compare a one-prompt baseline, a human checklist, the file-based loop and a managed service. Portability and traceability favor the file loop for substantial recurring work; short tasks may not justify the overhead.",
+      "view_ids": [],
+      "cards": [
+        {
+          "heading": "One prompt / checklist",
+          "body": "Low setup cost. A strong baseline for occasional short work."
+        },
+        {
+          "heading": "File-based loop",
+          "body": "Durable evidence and repeated checks. More records to maintain."
+        },
+        {
+          "heading": "Managed service",
+          "body": "Consider when concurrency or independent approval demands it."
+        }
+      ]
+    },
+    {
+      "id": "P5",
+      "title": "Try to overturn the recommendation",
+      "takeaway": "I define what would change my mind before declaring a winner.",
+      "paper_section": "choices",
+      "claim_ids": [
+        "CL7",
+        "CL8",
+        "CL11"
+      ],
+      "speaker_notes": "Three challenges remain distinct. Mechanical failures can be injected locally. Publication effectiveness needs reader evaluation. Real host portability requires actual Claude Code and Copilot sessions, which were not performed for this kit.",
+      "view_ids": [],
+      "cards": [
+        {
+          "heading": "Value challenge",
+          "body": "If defects do not improve and effort rises, prefer the checklist."
+        },
+        {
+          "heading": "Authority challenge",
+          "body": "If approval must be independent, local writable files are insufficient."
+        },
+        {
+          "heading": "Portability challenge",
+          "body": "If the selected host cannot resume and export, fix the adapter or narrow the claim."
+        }
+      ]
+    },
+    {
+      "id": "P6",
+      "title": "The host does the thinking; the kit keeps records",
+      "takeaway": "C1 makes the boundary and the author\u2019s accountability explicit.",
+      "paper_section": "architecture",
+      "claim_ids": [
+        "CL1",
+        "CL9"
+      ],
+      "speaker_notes": "Read this at the system-context level. The external host retrieves sources and creates artifacts. The kit supplies durable coordination. The author remains responsible for using and approving the recommendation. Source definitions: original C4 documentation.",
+      "view_ids": [
+        "V1"
+      ]
+    },
+    {
+      "id": "P7",
+      "title": "Three local containers keep the kit portable",
+      "takeaway": "C2 separates the coordinator, shared folder and optional renderer.",
+      "paper_section": "architecture",
+      "claim_ids": [
+        "CL1",
+        "CL6",
+        "CL9"
+      ],
+      "speaker_notes": "A C4 container means an application or data store. Here the runner and renderer are separate programs and the folder is a data store. These are local containers in the C4 sense, not Docker or distributed services. The host starts the programs.",
+      "view_ids": [
+        "V2"
+      ]
+    },
+    {
+      "id": "P8",
+      "title": "One bounded loop carries the work to export",
+      "takeaway": "Research and critique can reopen the earliest affected stage.",
+      "paper_section": "mechanisms",
+      "claim_ids": [
+        "CL6"
+      ],
+      "speaker_notes": "The stages are frame, research, challenge, design, story, draft, review and export. The host acts inside a stage. The coordinator checks records before transition. Defaults are three revisions and 24 prompt issuances; time and cost remain host responsibilities.",
+      "view_ids": [],
+      "cards": [
+        {
+          "heading": "Discover and decide",
+          "body": "Frame \u2192 research \u2192 challenge. Change the hypothesis when evidence requires it."
+        },
+        {
+          "heading": "Design and explain",
+          "body": "Design \u2192 story \u2192 draft. Derive both forms from the shared records."
+        },
+        {
+          "heading": "Review and deliver",
+          "body": "Review \u2192 export. Reopen earlier work when meaning changes."
+        }
+      ]
+    },
+    {
+      "id": "P9",
+      "title": "A new claim invalidates the old review",
+      "takeaway": "A fingerprint binds a review to exact files, not to their truth.",
+      "paper_section": "mechanisms",
+      "claim_ids": [
+        "CL3",
+        "CL6",
+        "CL8"
+      ],
+      "speaker_notes": "In the running example, the source correction changes evidence.json. The host reopens research, updates dependent content, and performs a new review. Hashes catch stale records; they do not prove semantic consistency or protect against a writer who edits the validator.",
+      "view_ids": [],
+      "cards": [
+        {
+          "heading": "Detect",
+          "body": "Cumulative checks identify missing references and stale review bytes."
+        },
+        {
+          "heading": "Repair",
+          "body": "Snapshot, reopen research and update the dependent decision and outputs."
+        },
+        {
+          "heading": "Reassess",
+          "body": "Review current content, render again and inspect the new files."
+        }
+      ]
+    },
+    {
+      "id": "P10",
+      "title": "One story can serve two reading modes",
+      "takeaway": "The deck simplifies detail while preserving the paper\u2019s conditions.",
+      "paper_section": "story",
+      "claim_ids": [
+        "CL7"
+      ],
+      "speaker_notes": "The story map links each beat to claims, decisions, paper sections, slide IDs and diagrams. First-person authorial statements explain recommendations. Factual observations do not need an I-prefix. Speaker notes supply detail without hiding decision-changing limitations.",
+      "view_ids": [],
+      "cards": [
+        {
+          "heading": "Paper",
+          "body": "Full context, evidence, mechanisms, alternatives and validation."
+        },
+        {
+          "heading": "Deck",
+          "body": "One conclusion per slide, clear visuals and readable source notes."
+        },
+        {
+          "heading": "Shared contract",
+          "body": "Same names, numbers, caveats, diagrams and decision ask."
+        }
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "Integrate through files and explicit instructions",
+      "takeaway": "Portability depends on the capabilities available in the host.",
+      "paper_section": "evidence",
+      "claim_ids": [
+        "CL4",
+        "CL5",
+        "CL9"
+      ],
+      "speaker_notes": "The adapters follow documented CLAUDE.md and .github/copilot-instructions.md conventions. They have not been exercised in real host sessions here. A generic prompt is the fallback. Without research or rendering, return a conditional or incomplete draft.",
+      "view_ids": [],
+      "cards": [
+        {
+          "heading": "Claude Code",
+          "body": "Merge the small adapter into CLAUDE.md; explicitly load the kit."
+        },
+        {
+          "heading": "GitHub Copilot",
+          "body": "Merge repository instructions; verify that the selected host loads them."
+        },
+        {
+          "heading": "Other environments",
+          "body": "Use the master prompt and the same durable run records."
+        }
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "Measure whether the process improves decisions",
+      "takeaway": "I would compare the loop with a checklist on representative briefs.",
+      "paper_section": "delivery",
+      "claim_ids": [
+        "CL11"
+      ],
+      "speaker_notes": "The comparative study is a proposed next step, not an experiment already performed. A sponsor should set material-defect definitions and acceptable effort before starting. Use separate readers where possible and include failure cases.",
+      "view_ids": [],
+      "cards": [
+        {
+          "heading": "Decision quality",
+          "body": "Count unsupported pivotal claims, missed alternatives and contradictions."
+        },
+        {
+          "heading": "Reader understanding",
+          "body": "Can a newcomer explain the mechanism, tradeoff and reversal condition?"
+        },
+        {
+          "heading": "Total effort",
+          "body": "Track author time, reviewer time, model cost and meaningful rework."
+        }
+      ]
+    },
+    {
+      "id": "P13",
+      "title": "My recommendation is a bounded pilot",
+      "takeaway": "Adopt broadly only if the improvement justifies the added work.",
+      "paper_section": "limits",
+      "claim_ids": [
+        "CL8",
+        "CL11"
+      ],
+      "speaker_notes": "Decision ask: choose one recurring architecture problem, a checklist baseline and acceptance criteria. The local kit is not a security boundary, a source-truth oracle or an independently benchmarked system. Preserve a simpler path when it is enough.",
+      "view_ids": [],
+      "bullets": [
+        "Start with one representative architecture brief.",
+        "Define acceptable defects, reader understanding and effort in advance.",
+        "Use the pilot to decide whether the extra records and checks earn their cost.",
+        "Add managed coordination only when a measured constraint requires it."
+      ]
+    },
+    {
+      "id": "P14",
+      "title": "The coordinator separates transitions from checks",
+      "takeaway": "C3 zooms into the runner; the folder remains a supporting container.",
+      "paper_section": "architecture",
+      "claim_ids": [
+        "CL1",
+        "CL6"
+      ],
+      "speaker_notes": "Appendix. In the supplied source, loop.py implements the coordinator and prompt assembly, while gates.py implements checks. The diagram renderer is a separate utility; it is not incorrectly shown as invoked by the coordinator.",
+      "view_ids": [
+        "V3"
+      ],
+      "kicker": "APPENDIX  /  IMPLEMENTATION"
+    },
+    {
+      "id": "P15",
+      "title": "Review freshness is implemented in four classes",
+      "takeaway": "C4 shows selected real code in gates.py, not a deployment view.",
+      "paper_section": "architecture",
+      "claim_ids": [
+        "CL1",
+        "CL6",
+        "CL10"
+      ],
+      "speaker_notes": "Appendix. GateEngine creates Finding records, reads through ArtifactStore and compares a ReviewStamp with the current fingerprint. These classes exist in the shipped code. Their structural success does not establish the truth of a publication.",
+      "view_ids": [
+        "V4"
+      ],
+      "kicker": "APPENDIX  /  IMPLEMENTATION"
+    }
+  ]
+}

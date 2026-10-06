@@ -1,0 +1,730 @@
+{
+  "elements": [
+    {
+      "id": "Author",
+      "name": "Architecture author",
+      "type": "person",
+      "description": "Owns the decision and reviews outputs",
+      "status": "existing"
+    },
+    {
+      "id": "Loop",
+      "name": "Architecture Loop",
+      "type": "system",
+      "description": "Coordinates evidence and publication records",
+      "status": "implemented"
+    },
+    {
+      "id": "Host",
+      "name": "Host agent",
+      "type": "external",
+      "description": "Researches, designs, writes and reviews",
+      "status": "existing"
+    },
+    {
+      "id": "Sources",
+      "name": "Primary sources",
+      "type": "external",
+      "description": "Provide evidence and counterevidence",
+      "status": "existing"
+    },
+    {
+      "id": "Runner",
+      "name": "Local coordinator",
+      "type": "container",
+      "description": "Controls stages and checks prerequisites",
+      "status": "implemented",
+      "parent": "Loop",
+      "technology": "Python 3.10+; loop.py"
+    },
+    {
+      "id": "Store",
+      "name": "Run folder",
+      "type": "container",
+      "description": "Stores evidence, design, story and outputs",
+      "status": "implemented",
+      "parent": "Loop",
+      "technology": "JSON, Markdown and files"
+    },
+    {
+      "id": "Publisher",
+      "name": "Publication renderer",
+      "type": "container",
+      "description": "Builds editable deck and paper PDF",
+      "status": "implemented",
+      "parent": "Loop",
+      "technology": "Python; render.py"
+    },
+    {
+      "id": "Coordinator",
+      "name": "Run coordinator",
+      "type": "component",
+      "description": "Advances or reopens a stage",
+      "status": "implemented",
+      "parent": "Runner",
+      "technology": "Python; loop.py main"
+    },
+    {
+      "id": "Gates",
+      "name": "Quality gates",
+      "type": "component",
+      "description": "Checks records and review freshness",
+      "status": "implemented",
+      "parent": "Runner",
+      "technology": "Python; gates.py"
+    },
+    {
+      "id": "Prompts",
+      "name": "Prompt assembly",
+      "type": "component",
+      "description": "Emits the current stage task",
+      "status": "implemented",
+      "parent": "Runner",
+      "technology": "Python; emit_prompt"
+    },
+    {
+      "id": "EngineClass",
+      "name": "GateEngine",
+      "type": "code",
+      "description": "Runs cumulative structural validation",
+      "status": "implemented",
+      "parent": "Gates",
+      "code_ref": "gates.py:GateEngine",
+      "members": [
+        "check(stage)",
+        "require(condition, code, path, message)"
+      ]
+    },
+    {
+      "id": "StoreClass",
+      "name": "ArtifactStore",
+      "type": "code",
+      "description": "Reads confined paths and hashes content",
+      "status": "implemented",
+      "parent": "Gates",
+      "code_ref": "gates.py:ArtifactStore",
+      "members": [
+        "read(relative)",
+        "path(relative)",
+        "fingerprint()"
+      ]
+    },
+    {
+      "id": "FindingClass",
+      "name": "Finding",
+      "type": "code",
+      "description": "Returns an actionable validation defect",
+      "status": "implemented",
+      "parent": "Gates",
+      "code_ref": "gates.py:Finding",
+      "members": [
+        "code: str",
+        "path: str",
+        "message: str",
+        "to_dict()"
+      ]
+    },
+    {
+      "id": "StampClass",
+      "name": "ReviewStamp",
+      "type": "code",
+      "description": "Checks which bytes were reviewed",
+      "status": "implemented",
+      "parent": "Gates",
+      "code_ref": "gates.py:ReviewStamp",
+      "members": [
+        "source_fingerprint: str",
+        "reviewer: str",
+        "mode: str",
+        "matches(store)"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "source": "Author",
+      "target": "Host",
+      "label": "Defines the decision",
+      "protocol": "Conversation"
+    },
+    {
+      "id": "R2",
+      "source": "Host",
+      "target": "Sources",
+      "label": "Retrieves supporting and contrary evidence",
+      "protocol": "Research tool"
+    },
+    {
+      "id": "R3",
+      "source": "Host",
+      "target": "Loop",
+      "label": "Creates and evaluates artifacts",
+      "protocol": "Files and commands"
+    },
+    {
+      "id": "R4",
+      "source": "Loop",
+      "target": "Author",
+      "label": "Provides reviewable paper and deck",
+      "protocol": "Local files"
+    },
+    {
+      "id": "R5",
+      "source": "Host",
+      "target": "Runner",
+      "label": "Invokes stages",
+      "protocol": "CLI"
+    },
+    {
+      "id": "R6",
+      "source": "Host",
+      "target": "Store",
+      "label": "Writes canonical records",
+      "protocol": "Filesystem"
+    },
+    {
+      "id": "R7",
+      "source": "Runner",
+      "target": "Store",
+      "label": "Checks and updates run state",
+      "protocol": "Filesystem"
+    },
+    {
+      "id": "R8",
+      "source": "Host",
+      "target": "Publisher",
+      "label": "Requests exports",
+      "protocol": "CLI"
+    },
+    {
+      "id": "R9",
+      "source": "Publisher",
+      "target": "Store",
+      "label": "Reads records; writes PDF/PPTX",
+      "protocol": "Filesystem"
+    },
+    {
+      "id": "R10",
+      "source": "Coordinator",
+      "target": "Gates",
+      "label": "Requests validation",
+      "protocol": "Python call"
+    },
+    {
+      "id": "R11",
+      "source": "Coordinator",
+      "target": "Prompts",
+      "label": "Requests stage task",
+      "protocol": "Python call"
+    },
+    {
+      "id": "R12",
+      "source": "Coordinator",
+      "target": "Store",
+      "label": "Persists run state",
+      "protocol": "Filesystem"
+    },
+    {
+      "id": "R13",
+      "source": "Gates",
+      "target": "Store",
+      "label": "Reads records and hashes",
+      "protocol": "Filesystem"
+    },
+    {
+      "id": "R14",
+      "source": "EngineClass",
+      "target": "StoreClass",
+      "label": "Reads and fingerprints",
+      "protocol": "Python call"
+    },
+    {
+      "id": "R15",
+      "source": "EngineClass",
+      "target": "FindingClass",
+      "label": "Emits failures",
+      "protocol": "Constructs"
+    },
+    {
+      "id": "R16",
+      "source": "EngineClass",
+      "target": "StampClass",
+      "label": "Checks review binding",
+      "protocol": "Constructs"
+    },
+    {
+      "id": "R17",
+      "source": "StampClass",
+      "target": "StoreClass",
+      "label": "Compares fingerprints",
+      "protocol": "Python call"
+    }
+  ],
+  "views": [
+    {
+      "id": "V1",
+      "level": 1,
+      "title": "C1 \u00b7 System context",
+      "scope": "Loop",
+      "nodes": [
+        "Author",
+        "Host",
+        "Loop",
+        "Sources"
+      ],
+      "edges": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "size": [
+        1200,
+        760
+      ],
+      "positions": {
+        "Author": [
+          60,
+          140,
+          400,
+          160
+        ],
+        "Host": [
+          740,
+          140,
+          400,
+          160
+        ],
+        "Loop": [
+          60,
+          465,
+          400,
+          160
+        ],
+        "Sources": [
+          740,
+          465,
+          400,
+          160
+        ]
+      },
+      "label_positions": {
+        "R1": [
+          600,
+          210
+        ],
+        "R2": [
+          940,
+          380
+        ],
+        "R3": [
+          595,
+          405
+        ],
+        "R4": [
+          260,
+          390
+        ]
+      },
+      "legend": "Person = accountable author. Dark blue = kit. Gray = external systems. Arrows describe directed interactions.",
+      "caption": "C1: the host performs intellectual work and retrieves evidence. Architecture Loop retains reviewable records and outputs. The author remains accountable for using the recommendation."
+    },
+    {
+      "id": "V2",
+      "level": 2,
+      "title": "C2 \u00b7 Containers within Architecture Loop",
+      "scope": "Loop",
+      "nodes": [
+        "Host",
+        "Runner",
+        "Publisher",
+        "Store"
+      ],
+      "edges": [
+        "R5",
+        "R6",
+        "R8",
+        "R7",
+        "R9"
+      ],
+      "size": [
+        1200,
+        800
+      ],
+      "positions": {
+        "Host": [
+          30,
+          275,
+          275,
+          175
+        ],
+        "Runner": [
+          450,
+          160,
+          300,
+          175
+        ],
+        "Publisher": [
+          825,
+          160,
+          330,
+          175
+        ],
+        "Store": [
+          605,
+          510,
+          430,
+          170
+        ]
+      },
+      "routes": {
+        "R5": [
+          [
+            305,
+            300
+          ],
+          [
+            375,
+            300
+          ],
+          [
+            375,
+            248
+          ],
+          [
+            450,
+            248
+          ]
+        ],
+        "R8": [
+          [
+            167,
+            275
+          ],
+          [
+            167,
+            105
+          ],
+          [
+            990,
+            105
+          ],
+          [
+            990,
+            160
+          ]
+        ],
+        "R6": [
+          [
+            168,
+            450
+          ],
+          [
+            168,
+            595
+          ],
+          [
+            605,
+            595
+          ]
+        ]
+      },
+      "label_positions": {
+        "R5": [
+          355,
+          340
+        ],
+        "R8": [
+          580,
+          99
+        ],
+        "R6": [
+          360,
+          577
+        ],
+        "R7": [
+          650,
+          425
+        ],
+        "R9": [
+          1040,
+          435
+        ]
+      },
+      "legend": "Outlined boundary = kit ownership. Blue = application or data-store container. Gray = external host. Arrow labels include protocol.",
+      "caption": "C2: the coordinator and optional renderer are separate Python applications. A local folder is the shared data store. The host invokes commands and writes content; no background model service is required."
+    },
+    {
+      "id": "V3",
+      "level": 3,
+      "title": "C3 \u00b7 Components inside the local coordinator",
+      "scope": "Runner",
+      "nodes": [
+        "Coordinator",
+        "Gates",
+        "Prompts",
+        "Store"
+      ],
+      "edges": [
+        "R10",
+        "R11",
+        "R12",
+        "R13"
+      ],
+      "size": [
+        1200,
+        810
+      ],
+      "positions": {
+        "Coordinator": [
+          65,
+          160,
+          630,
+          175
+        ],
+        "Gates": [
+          65,
+          500,
+          320,
+          175
+        ],
+        "Prompts": [
+          435,
+          500,
+          320,
+          175
+        ],
+        "Store": [
+          845,
+          320,
+          320,
+          175
+        ]
+      },
+      "label_positions": {
+        "R10": [
+          220,
+          415
+        ],
+        "R11": [
+          590,
+          415
+        ],
+        "R12": [
+          860,
+          230
+        ],
+        "R13": [
+          1020,
+          595
+        ]
+      },
+      "legend": "Teal = Python component within the selected coordinator. Blue = supporting data store. Outlined boundary marks the selected container.",
+      "caption": "C3: the coordinator controls transitions, quality gates inspect the records, and prompt assembly supplies the next task. The folder supports all three; it is a data-store container, not a component.",
+      "routes": {
+        "R13": [
+          [
+            225,
+            675
+          ],
+          [
+            225,
+            720
+          ],
+          [
+            1005,
+            720
+          ],
+          [
+            1005,
+            495
+          ]
+        ],
+        "R12": [
+          [
+            695,
+            245
+          ],
+          [
+            1005,
+            245
+          ],
+          [
+            1005,
+            320
+          ]
+        ]
+      }
+    },
+    {
+      "id": "V4",
+      "level": 4,
+      "title": "C4 \u00b7 Code within quality gates",
+      "scope": "Gates",
+      "nodes": [
+        "EngineClass",
+        "StoreClass",
+        "FindingClass",
+        "StampClass"
+      ],
+      "edges": [
+        "R14",
+        "R15",
+        "R16",
+        "R17"
+      ],
+      "size": [
+        1200,
+        850
+      ],
+      "positions": {
+        "EngineClass": [
+          65,
+          150,
+          445,
+          205
+        ],
+        "StoreClass": [
+          740,
+          150,
+          400,
+          205
+        ],
+        "FindingClass": [
+          65,
+          535,
+          400,
+          205
+        ],
+        "StampClass": [
+          740,
+          535,
+          400,
+          205
+        ]
+      },
+      "label_positions": {
+        "R14": [
+          615,
+          250
+        ],
+        "R15": [
+          265,
+          440
+        ],
+        "R16": [
+          600,
+          460
+        ],
+        "R17": [
+          940,
+          445
+        ]
+      },
+      "legend": "Purple = implemented Python class in gates.py. Members show selected methods or fields. Arrows show directed code dependencies.",
+      "caption": "C4: these four classes exist in gates.py. GateEngine returns Finding records and uses ArtifactStore and ReviewStamp to check content and review freshness. This view deliberately selects one risk-bearing component."
+    }
+  ],
+  "contracts": [
+    {
+      "id": "K1",
+      "producer": "Host",
+      "consumer": "Runner",
+      "payload": "CLI command + run path; JSON state and exit code returned",
+      "errors": "Exit 1 for failed gates; exit 2 for invalid operation or exhausted budget",
+      "idempotency": "check/status/fingerprint are read-only; advance changes stage; prompt consumes an issuance; inspect status after uncertain completion",
+      "authorization": "Host-approved local execution only; no permissions granted by kit"
+    },
+    {
+      "id": "K2",
+      "producer": "Host",
+      "consumer": "Store",
+      "payload": "Version-1 JSON records, Markdown paper and diagram sources",
+      "errors": "Malformed JSON or missing required references fails the cumulative gate",
+      "idempotency": "One writer replaces an intended file; revision snapshots precede upstream edits",
+      "authorization": "Host-scoped filesystem access; no secrets in public records"
+    },
+    {
+      "id": "K3",
+      "producer": "Publisher",
+      "consumer": "Store",
+      "payload": "Paper PDF, editable PPTX, layout preview PDF and hash manifest",
+      "errors": "Missing renderer dependency or invalid layout stops export; no completion claim",
+      "idempotency": "Re-render can replace derived outputs; new hashes and inspection are required",
+      "authorization": "Local write access; no upload or publishing authority"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "SC1",
+      "kind": "success",
+      "steps": [
+        "Author frames the decision",
+        "Host retrieves evidence and creates records",
+        "Coordinator accepts each stage after checks",
+        "Host reviews the current content fingerprint",
+        "Renderer emits publications",
+        "Author or host inspects bytes; export check marks ready for user review"
+      ]
+    },
+    {
+      "id": "SC2",
+      "kind": "failure",
+      "steps": [
+        "A source correction changes a pivotal claim",
+        "Host reopens research with a reason and snapshot",
+        "Dependent decisions, diagrams, paper and slides are updated",
+        "The old review stamp fails against changed canonical bytes",
+        "A new semantic review and export inspection are required"
+      ]
+    },
+    {
+      "id": "SC3",
+      "kind": "failure",
+      "steps": [
+        "The host stops mid-stage",
+        "A new session reads state and existing artifacts",
+        "Cumulative checks reveal missing or partial records",
+        "The host resumes the earliest necessary work without relying on chat memory"
+      ]
+    }
+  ],
+  "operations": {
+    "owner": "One run author; kit maintainer owns protocol changes",
+    "observability": "state history, command exit codes, JSON findings, declared review results and source/export hashes",
+    "recovery": "Inspect state after an interrupted command; use revision snapshots; never delete evidence to hide a failed decision",
+    "security": "Treat retrieved content as data; scope filesystem access in the host; use separate approval service if independent authority is needed",
+    "retention": "Author sets a retention policy; snapshots copy outputs and can grow; do not store credentials",
+    "schema_evolution": "This version accepts additional fields, but required structures are version-1; migrate deliberately before introducing breaking record changes"
+  },
+  "implementation": [
+    {
+      "increment": "1",
+      "deliverable": "One representative brief and complete canonical records",
+      "acceptance": "A newcomer can identify the problem, evidence and decision"
+    },
+    {
+      "increment": "2",
+      "deliverable": "Shared C4 and story outputs",
+      "acceptance": "All four levels trace to one registry and all slide claims map to paper sections"
+    },
+    {
+      "increment": "3",
+      "deliverable": "Bounded pilot against a checklist baseline",
+      "acceptance": "Sponsor predefines acceptable material defects, active time and reader comprehension"
+    },
+    {
+      "increment": "4",
+      "deliverable": "Independent review or managed coordination only if needed",
+      "acceptance": "The measured constraint justifies extra operating complexity"
+    }
+  ],
+  "sizing": {
+    "measured": "No throughput, cost or quality improvement benchmark is claimed.",
+    "model": "Hashing reads canonical bytes; cost is proportional to their total size. Each snapshot copies the run excluding previous snapshots.",
+    "assumptions": "Small document-sized runs; one writer.",
+    "limits": "No cross-process locking, automatic source refresh, scheduling or remote model invocation.",
+    "host_budget": "Default 24 prompt issuances and 3 revisions; host enforces time/token/cost limits."
+  }
+}

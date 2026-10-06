@@ -1,0 +1,33 @@
+{
+  "topic": "A portable, evidence-led architecture research and publication loop",
+  "decision": "Whether to pilot a file-based architecture loop for recurring, substantial architecture decisions",
+  "author": "Architecture Loop — worked example in first-person authorial voice",
+  "audiences": [
+    "Engineering leaders",
+    "Engineers new to the topic"
+  ],
+  "as_of": "2026-10-06",
+  "success_criteria": [
+    "The recommendation is supported and its reversal conditions are explicit",
+    "A reader with no prior context can explain the mechanism and its limits",
+    "Paper and slides agree on claims, diagrams, units and caveats"
+  ],
+  "constraints": [
+    "Use any host agent with sufficient tools",
+    "No mandatory model SDK",
+    "One local writer per run",
+    "Do not claim empirical quality improvement before evaluating it"
+  ],
+  "max_revisions": 3,
+  "max_prompts": 24,
+  "freshness_days": 30,
+  "require_independent_review": false,
+  "required_outputs": [
+    "pdf",
+    "pptx"
+  ],
+  "target_paper_words": 3500,
+  "target_core_slides": 14,
+  "research_budget_note": "Set a host time/cost limit; these word and slide targets are adjustable.",
+  "output_stem": "Architecture_Loop_Example"
+}

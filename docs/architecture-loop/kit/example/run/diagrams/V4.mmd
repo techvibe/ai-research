@@ -1,0 +1,35 @@
+%% model-sha256: c6a42a18801e616c658a9046b5c8d31b48d8dbbefd3051923a7f8248449a902c
+%% C4 · Code within quality gates
+%% Scope: Gates
+%% Purple = implemented Python class in gates.py. Members show selected methods or fields. Arrows show directed code dependencies.
+classDiagram
+direction TB
+  class EngineClass["GateEngine"] {
+    +check(stage)
+    +require(condition, code, path, message)
+  }
+  note for EngineClass "gates.py:GateEngine; implemented"
+  class StoreClass["ArtifactStore"] {
+    +read(relative)
+    +path(relative)
+    +fingerprint()
+  }
+  note for StoreClass "gates.py:ArtifactStore; implemented"
+  class FindingClass["Finding"] {
+    +code: str
+    +path: str
+    +message: str
+    +to_dict()
+  }
+  note for FindingClass "gates.py:Finding; implemented"
+  class StampClass["ReviewStamp"] {
+    +source_fingerprint: str
+    +reviewer: str
+    +mode: str
+    +matches(store)
+  }
+  note for StampClass "gates.py:ReviewStamp; implemented"
+  EngineClass ..> StoreClass : Reads and fingerprints
+  EngineClass ..> FindingClass : Emits failures
+  EngineClass ..> StampClass : Checks review binding
+  StampClass ..> StoreClass : Compares fingerprints

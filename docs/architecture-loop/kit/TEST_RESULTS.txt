@@ -1,0 +1,22 @@
+test_changed_model_stales_diagrams (test_loop.LoopTests.test_changed_model_stales_diagrams) ... ok
+test_changed_paper_stales_review (test_loop.LoopTests.test_changed_paper_stales_review) ... ok
+test_complete_example_passes_draft_structure (test_loop.LoopTests.test_complete_example_passes_draft_structure) ... ok
+test_failed_gate_cannot_advance (test_loop.LoopTests.test_failed_gate_cannot_advance) ... ok
+test_invalid_parent_is_rejected (test_loop.LoopTests.test_invalid_parent_is_rejected) ... ok
+test_malformed_json_returns_finding (test_loop.LoopTests.test_malformed_json_returns_finding) ... ok
+test_missing_code_view_is_rejected (test_loop.LoopTests.test_missing_code_view_is_rejected) ... ok
+test_missing_export_is_rejected (test_loop.LoopTests.test_missing_export_is_rejected) ... ok
+test_missing_support_blocks_fact (test_loop.LoopTests.test_missing_support_blocks_fact) ... ok
+test_orphan_slide_is_rejected (test_loop.LoopTests.test_orphan_slide_is_rejected) ... ok
+test_path_escape_is_rejected (test_loop.LoopTests.test_path_escape_is_rejected) ... ok
+test_prompt_budget_stops_issuing_work (test_loop.LoopTests.test_prompt_budget_stops_issuing_work) ... ok
+test_revision_budget_blocks_without_erasing_snapshot (test_loop.LoopTests.test_revision_budget_blocks_without_erasing_snapshot) ... ok
+test_revision_cannot_jump_forward (test_loop.LoopTests.test_revision_cannot_jump_forward) ... ok
+test_slide_section_claim_mismatch_is_rejected (test_loop.LoopTests.test_slide_section_claim_mismatch_is_rejected) ... ok
+test_unread_source_blocks_fact (test_loop.LoopTests.test_unread_source_blocks_fact) ... ok
+test_zoom_parent_must_be_visible (test_loop.LoopTests.test_zoom_parent_must_be_visible) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.106s
+
+OK

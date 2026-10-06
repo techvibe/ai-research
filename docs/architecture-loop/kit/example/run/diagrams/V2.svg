@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" data-model-sha256="c6a42a18801e616c658a9046b5c8d31b48d8dbbefd3051923a7f8248449a902c">
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#60758B"/></marker></defs>
+<rect width="1200" height="800" fill="#FFFFFF"/>
+<text x="40" y="44" font-family="DejaVu Sans,Arial" font-size="26" font-weight="bold" fill="#12324A">C2 · Containers within Architecture Loop</text>
+<text x="40" y="78" font-family="DejaVu Sans,Arial" font-size="17" fill="#52677A">Scope: Architecture Loop · Loop</text>
+<rect x="428" y="122" width="749" height="580" rx="14" fill="#F4F8FA" stroke="#849AAF" stroke-dasharray="7,5"/>
+<text x="442" y="145" font-family="DejaVu Sans,Arial" font-size="15" fill="#536C80">Boundary: Architecture Loop</text>
+<polyline points="305,300 375,300 375,248 450,248" fill="none" stroke="#60758B" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="168,450 168,595 605,595" fill="none" stroke="#60758B" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="167,275 167,105 990,105 990,160" fill="none" stroke="#60758B" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="655.3956834532374,335.0 766.1870503597122,510.0" fill="none" stroke="#60758B" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="947.1942446043165,335.0 861.5827338129496,510.0" fill="none" stroke="#60758B" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="30" y="275" width="275" height="175" rx="10" fill="#596574"/>
+<text x="46" y="300" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">EXTERNAL · Host</text>
+<text x="46" y="326" font-family="DejaVu Sans,Arial" font-size="24" font-weight="bold" fill="#FFFFFF">Host agent</text>
+<text x="46" y="353" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">Researches, designs,</text>
+<text x="46" y="377" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">writes and reviews</text>
+<rect x="450" y="160" width="300" height="175" rx="10" fill="#25638C"/>
+<text x="466" y="185" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">CONTAINER · Runner</text>
+<text x="466" y="211" font-family="DejaVu Sans,Arial" font-size="24" font-weight="bold" fill="#FFFFFF">Local coordinator</text>
+<text x="466" y="238" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">Controls stages and</text>
+<text x="466" y="262" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">checks prerequisites</text>
+<text x="466" y="288" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">Python 3.10+; loop.py</text>
+<rect x="825" y="160" width="330" height="175" rx="10" fill="#25638C"/>
+<text x="841" y="185" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">CONTAINER · Publisher</text>
+<text x="841" y="211" font-family="DejaVu Sans,Arial" font-size="24" font-weight="bold" fill="#FFFFFF">Publication renderer</text>
+<text x="841" y="238" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">Builds editable deck and</text>
+<text x="841" y="262" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">paper PDF</text>
+<text x="841" y="288" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">Python; render.py</text>
+<rect x="605" y="510" width="430" height="170" rx="10" fill="#25638C"/>
+<text x="621" y="535" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">CONTAINER · Store</text>
+<text x="621" y="561" font-family="DejaVu Sans,Arial" font-size="24" font-weight="bold" fill="#FFFFFF">Run folder</text>
+<text x="621" y="588" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">Stores evidence, design, story</text>
+<text x="621" y="612" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">and outputs</text>
+<text x="621" y="638" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">JSON, Markdown and files</text>
+<rect x="266.0" y="325" width="178" height="26" rx="4" fill="#FFFFFF" fill-opacity="0.97"/>
+<text x="355" y="340" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">Invokes stages · CLI</text>
+<rect x="247.0" y="562" width="226" height="44" rx="4" fill="#FFFFFF" fill-opacity="0.97"/>
+<text x="360" y="577" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">Writes canonical records ·</text>
+<text x="360" y="595" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">Filesystem</text>
+<rect x="483.0" y="84" width="194" height="26" rx="4" fill="#FFFFFF" fill-opacity="0.97"/>
+<text x="580" y="99" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">Requests exports · CLI</text>
+<rect x="521.0" y="410" width="258" height="44" rx="4" fill="#FFFFFF" fill-opacity="0.97"/>
+<text x="650" y="425" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">Checks and updates run state ·</text>
+<text x="650" y="443" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">Filesystem</text>
+<rect x="911.0" y="420" width="258" height="44" rx="4" fill="#FFFFFF" fill-opacity="0.97"/>
+<text x="1040" y="435" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">Reads records; writes PDF/PPTX</text>
+<text x="1040" y="453" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">· Filesystem</text>
+<text x="40" y="728" font-family="DejaVu Sans,Arial" font-size="14" fill="#52677A">Outlined boundary = kit ownership. Blue = application or data-store container. Gray = external host. Arrow labels include protocol.</text>
+</svg>

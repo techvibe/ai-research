@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "stage": "ready",
+  "status": "ready_for_user_review",
+  "created": "2026-10-06T14:50:40.687632+00:00",
+  "revision": 0,
+  "prompts_issued": 0,
+  "max_revisions": 3,
+  "max_prompts": 24,
+  "history": [
+    {
+      "event": "pass",
+      "stage": "frame",
+      "at": "2026-10-06T15:07:50.401526+00:00",
+      "fingerprint": "bd268dc08fa4e69784be81017346aa6dc78cc25dd7cfa6e3dca90948315edaab"
+    },
+    {
+      "event": "pass",
+      "stage": "research",
+      "at": "2026-10-06T15:07:50.406661+00:00",
+      "fingerprint": "bd268dc08fa4e69784be81017346aa6dc78cc25dd7cfa6e3dca90948315edaab"
+    },
+    {
+      "event": "pass",
+      "stage": "challenge",
+      "at": "2026-10-06T15:07:50.410275+00:00",
+      "fingerprint": "bd268dc08fa4e69784be81017346aa6dc78cc25dd7cfa6e3dca90948315edaab"
+    },
+    {
+      "event": "pass",
+      "stage": "design",
+      "at": "2026-10-06T15:07:50.415293+00:00",
+      "fingerprint": "bd268dc08fa4e69784be81017346aa6dc78cc25dd7cfa6e3dca90948315edaab"
+    },
+    {
+      "event": "pass",
+      "stage": "story",
+      "at": "2026-10-06T15:07:50.420996+00:00",
+      "fingerprint": "bd268dc08fa4e69784be81017346aa6dc78cc25dd7cfa6e3dca90948315edaab"
+    },
+    {
+      "event": "pass",
+      "stage": "draft",
+      "at": "2026-10-06T15:07:50.430075+00:00",
+      "fingerprint": "bd268dc08fa4e69784be81017346aa6dc78cc25dd7cfa6e3dca90948315edaab"
+    },
+    {
+      "event": "pass",
+      "stage": "review",
+      "at": "2026-10-06T15:07:50.442702+00:00",
+      "fingerprint": "bd268dc08fa4e69784be81017346aa6dc78cc25dd7cfa6e3dca90948315edaab"
+    },
+    {
+      "event": "pass",
+      "stage": "export",
+      "at": "2026-10-06T15:07:50.454196+00:00",
+      "fingerprint": "bd268dc08fa4e69784be81017346aa6dc78cc25dd7cfa6e3dca90948315edaab"
+    }
+  ],
+  "reason": ""
+}

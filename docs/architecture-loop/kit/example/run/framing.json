@@ -1,0 +1,67 @@
+{
+  "context": "An architecture author must research a consequential software decision and explain the same recommendation in a paper and slide deck. The reader has not seen the conversations or working notes. The host agent supplies retrieval and authoring capabilities; the kit coordinates durable artifacts.",
+  "problem": "Separate, conversational drafts can lose the reasons for a choice and drift in terminology, evidence, diagrams or caveats. This is the failure mode the proposal is designed to address, not a measured prevalence claim.",
+  "stakeholders": [
+    "Author accountable for the recommendation",
+    "Engineering leader deciding whether to invest",
+    "Engineer assessing implementation feasibility",
+    "Reviewer checking evidence and constraints"
+  ],
+  "in_scope": [
+    "Research protocol",
+    "Decision records",
+    "Shared architecture and narrative data",
+    "Local coordination",
+    "C4 views",
+    "Paper and deck exports"
+  ],
+  "out_of_scope": [
+    "Training foundation models",
+    "Providing a search service",
+    "Automatic publishing",
+    "Tamper-proof approval enforcement",
+    "Concurrent writes to one run"
+  ],
+  "invariants": [
+    "No invented evidence or experience",
+    "Each C4 zoom has a valid parent",
+    "The paper and deck preserve the same conditions",
+    "Changed canonical content requires a new review",
+    "An unavailable required output cannot be called complete"
+  ],
+  "constraints": [
+    {
+      "kind": "design preference",
+      "statement": "Prefer standard files and Python 3.10+ over a managed orchestration dependency"
+    },
+    {
+      "kind": "implementation limitation",
+      "statement": "Single writer; no process locking"
+    },
+    {
+      "kind": "evidence limitation",
+      "statement": "This release has not been benchmarked for publication quality"
+    }
+  ],
+  "terms": {
+    "agent": "A model-driven worker using the tools supplied by its host",
+    "gate": "A test whose failure prevents a stage transition",
+    "claim": "One evidence-bearing statement",
+    "C4 model": "Four levels of software structure: context, containers, components and code"
+  },
+  "questions": [
+    "Which records must survive a host switch?",
+    "Which checks can code enforce?",
+    "What remains a semantic judgment?",
+    "When is a simple checklist sufficient?"
+  ],
+  "capabilities": {
+    "research": true,
+    "files": true,
+    "shell": true,
+    "render": true,
+    "independent_review": false
+  },
+  "reader_context_explained": true,
+  "assumptions_explicit": true
+}

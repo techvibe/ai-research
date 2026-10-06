@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="810" viewBox="0 0 1200 810" data-model-sha256="c6a42a18801e616c658a9046b5c8d31b48d8dbbefd3051923a7f8248449a902c">
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#60758B"/></marker></defs>
+<rect width="1200" height="810" fill="#FFFFFF"/>
+<text x="40" y="44" font-family="DejaVu Sans,Arial" font-size="26" font-weight="bold" fill="#12324A">C3 · Components inside the local coordinator</text>
+<text x="40" y="78" font-family="DejaVu Sans,Arial" font-size="17" fill="#52677A">Scope: Local coordinator · Runner</text>
+<rect x="43" y="122" width="734" height="575" rx="14" fill="#F4F8FA" stroke="#849AAF" stroke-dasharray="7,5"/>
+<text x="57" y="145" font-family="DejaVu Sans,Arial" font-size="15" fill="#536C80">Boundary: Local coordinator</text>
+<polyline points="340.1102941176471,335.0 264.8897058823529,500.0" fill="none" stroke="#60758B" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="435.33088235294116,335.0 539.6691176470588,500.0" fill="none" stroke="#60758B" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="695,245 1005,245 1005,320" fill="none" stroke="#60758B" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="225,675 225,720 1005,720 1005,495" fill="none" stroke="#60758B" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="65" y="160" width="630" height="175" rx="10" fill="#087F82"/>
+<text x="81" y="185" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">COMPONENT · Coordinator</text>
+<text x="81" y="211" font-family="DejaVu Sans,Arial" font-size="24" font-weight="bold" fill="#FFFFFF">Run coordinator</text>
+<text x="81" y="238" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">Advances or reopens a stage</text>
+<text x="81" y="264" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">Python; loop.py main</text>
+<rect x="65" y="500" width="320" height="175" rx="10" fill="#087F82"/>
+<text x="81" y="525" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">COMPONENT · Gates</text>
+<text x="81" y="551" font-family="DejaVu Sans,Arial" font-size="24" font-weight="bold" fill="#FFFFFF">Quality gates</text>
+<text x="81" y="578" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">Checks records and</text>
+<text x="81" y="602" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">review freshness</text>
+<text x="81" y="628" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">Python; gates.py</text>
+<rect x="435" y="500" width="320" height="175" rx="10" fill="#087F82"/>
+<text x="451" y="525" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">COMPONENT · Prompts</text>
+<text x="451" y="551" font-family="DejaVu Sans,Arial" font-size="24" font-weight="bold" fill="#FFFFFF">Prompt assembly</text>
+<text x="451" y="578" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">Emits the current stage</text>
+<text x="451" y="602" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">task</text>
+<text x="451" y="628" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">Python; emit_prompt</text>
+<rect x="845" y="320" width="320" height="175" rx="10" fill="#25638C"/>
+<text x="861" y="345" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">CONTAINER · Store</text>
+<text x="861" y="371" font-family="DejaVu Sans,Arial" font-size="24" font-weight="bold" fill="#FFFFFF">Run folder</text>
+<text x="861" y="398" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">Stores evidence, design,</text>
+<text x="861" y="422" font-family="DejaVu Sans,Arial" font-size="20" fill="#FFFFFF">story and outputs</text>
+<text x="861" y="448" font-family="DejaVu Sans,Arial" font-size="16" fill="#DFEDF7">JSON, Markdown and files</text>
+<rect x="99.0" y="400" width="242" height="44" rx="4" fill="#FFFFFF" fill-opacity="0.97"/>
+<text x="220" y="415" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">Requests validation · Python</text>
+<text x="220" y="433" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">call</text>
+<rect x="469.0" y="400" width="242" height="44" rx="4" fill="#FFFFFF" fill-opacity="0.97"/>
+<text x="590" y="415" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">Requests stage task · Python</text>
+<text x="590" y="433" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">call</text>
+<rect x="727.0" y="215" width="266" height="26" rx="4" fill="#FFFFFF" fill-opacity="0.97"/>
+<text x="860" y="230" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">Persists run state · Filesystem</text>
+<rect x="907.0" y="580" width="226" height="44" rx="4" fill="#FFFFFF" fill-opacity="0.97"/>
+<text x="1020" y="595" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">Reads records and hashes ·</text>
+<text x="1020" y="613" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="14" fill="#344F63">Filesystem</text>
+<text x="40" y="738" font-family="DejaVu Sans,Arial" font-size="14" fill="#52677A">Teal = Python component within the selected coordinator. Blue = supporting data store. Outlined boundary marks the selected container.</text>
+</svg>

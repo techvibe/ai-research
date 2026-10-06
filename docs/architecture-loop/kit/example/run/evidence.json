@@ -1,0 +1,386 @@
+{
+  "sources": [
+    {
+      "id": "S1",
+      "title": "C4 model: diagrams",
+      "url": "https://c4model.com/diagrams",
+      "publisher": "Simon Brown / C4 model",
+      "accessed": "2026-10-06",
+      "published": null,
+      "version": "Page retrieved on the access date",
+      "locator": "Static structure diagrams",
+      "summary": "Defines the four levels; using every level is not universally necessary.",
+      "kind": "primary_documentation",
+      "retrieved": true,
+      "limitations": "Establishes documented conventions, not the effectiveness of this kit."
+    },
+    {
+      "id": "S2",
+      "title": "C4 model: system context",
+      "url": "https://c4model.com/diagrams/system-context",
+      "publisher": "Simon Brown / C4 model",
+      "accessed": "2026-10-06",
+      "published": null,
+      "version": "Page retrieved on the access date",
+      "locator": "Scope and primary/supporting elements",
+      "summary": "A system context view includes people, the system and external systems.",
+      "kind": "primary_documentation",
+      "retrieved": true,
+      "limitations": "Establishes documented conventions, not the effectiveness of this kit."
+    },
+    {
+      "id": "S3",
+      "title": "C4 model: containers",
+      "url": "https://c4model.com/diagrams/container",
+      "publisher": "Simon Brown / C4 model",
+      "accessed": "2026-10-06",
+      "published": null,
+      "version": "Page retrieved on the access date",
+      "locator": "Opening definition and notes",
+      "summary": "Containers are applications or data stores; deployment views are separate.",
+      "kind": "primary_documentation",
+      "retrieved": true,
+      "limitations": "Establishes documented conventions, not the effectiveness of this kit."
+    },
+    {
+      "id": "S4",
+      "title": "C4 model: components",
+      "url": "https://c4model.com/diagrams/component",
+      "publisher": "Simon Brown / C4 model",
+      "accessed": "2026-10-06",
+      "published": null,
+      "version": "Page retrieved on the access date",
+      "locator": "Scope",
+      "summary": "Components decompose one selected container.",
+      "kind": "primary_documentation",
+      "retrieved": true,
+      "limitations": "Establishes documented conventions, not the effectiveness of this kit."
+    },
+    {
+      "id": "S5",
+      "title": "C4 model: code",
+      "url": "https://c4model.com/diagrams/code",
+      "publisher": "Simon Brown / C4 model",
+      "accessed": "2026-10-06",
+      "published": null,
+      "version": "Page retrieved on the access date",
+      "locator": "Scope and primary elements",
+      "summary": "Code views show implementation elements within one selected component.",
+      "kind": "primary_documentation",
+      "retrieved": true,
+      "limitations": "Establishes documented conventions, not the effectiveness of this kit."
+    },
+    {
+      "id": "S6",
+      "title": "C4 model: notation",
+      "url": "https://c4model.com/diagrams/notation",
+      "publisher": "Simon Brown / C4 model",
+      "accessed": "2026-10-06",
+      "published": null,
+      "version": "Page retrieved on the access date",
+      "locator": "Diagrams, elements and relationships",
+      "summary": "C4 is notation independent; diagrams need meaningful scopes, labels and keys.",
+      "kind": "primary_documentation",
+      "retrieved": true,
+      "limitations": "Establishes documented conventions, not the effectiveness of this kit."
+    },
+    {
+      "id": "S7",
+      "title": "Building effective agents",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "publisher": "Anthropic",
+      "accessed": "2026-10-06",
+      "published": "2024-12-19",
+      "version": "Page retrieved on the access date",
+      "locator": "Workflow: evaluator-optimizer",
+      "summary": "Describes iterative generation with evaluation and feedback.",
+      "kind": "primary_documentation",
+      "retrieved": true,
+      "limitations": "Establishes documented conventions, not the effectiveness of this kit."
+    },
+    {
+      "id": "S8",
+      "title": "Demystifying evals for AI agents",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "publisher": "Anthropic",
+      "accessed": "2026-10-06",
+      "published": "2026-01-09",
+      "version": "Page retrieved on the access date",
+      "locator": "Types of graders; evaluating research agents",
+      "summary": "Different checks address structure, semantics and human judgment.",
+      "kind": "primary_documentation",
+      "retrieved": true,
+      "limitations": "Establishes documented conventions, not the effectiveness of this kit."
+    },
+    {
+      "id": "S9",
+      "title": "How Claude remembers your project",
+      "url": "https://code.claude.com/docs/en/memory",
+      "publisher": "Anthropic",
+      "accessed": "2026-10-06",
+      "published": null,
+      "version": "Page retrieved on the access date",
+      "locator": "CLAUDE.md files",
+      "summary": "Documents project instruction files.",
+      "kind": "primary_documentation",
+      "retrieved": true,
+      "limitations": "Establishes documented conventions, not the effectiveness of this kit."
+    },
+    {
+      "id": "S10",
+      "title": "Adding repository instructions in an IDE",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/customize-copilot/configure-custom-instructions/add-repository-instructions-in-your-ide",
+      "publisher": "GitHub",
+      "accessed": "2026-10-06",
+      "published": null,
+      "version": "Page retrieved on the access date",
+      "locator": "Repository-wide custom instructions",
+      "summary": "Documents the .github/copilot-instructions.md convention.",
+      "kind": "primary_documentation",
+      "retrieved": true,
+      "limitations": "Establishes documented conventions, not the effectiveness of this kit."
+    },
+    {
+      "id": "S11",
+      "title": "Architecture Loop local implementation",
+      "url": "../../loop.py",
+      "publisher": "Architecture Loop kit",
+      "accessed": "2026-10-06",
+      "published": null,
+      "version": "Kit 1.0",
+      "locator": "loop.py main; gates.py GateEngine; diagrams.py generate; render.py render",
+      "summary": "The shipped source implements the local coordinator and renderer.",
+      "kind": "local_code",
+      "retrieved": true,
+      "limitations": "Inspected prototype code; not an independent deployment or security assessment."
+    }
+  ],
+  "claims": [
+    {
+      "id": "CL1",
+      "text": "The C4 model distinguishes system context, containers, components and code.",
+      "kind": "fact",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "confidence": "high",
+      "reason": "The original C4 documentation defines the four scopes.",
+      "verification": "verified",
+      "pivotal": true,
+      "time_sensitive": false
+    },
+    {
+      "id": "CL2",
+      "text": "An evaluator-optimizer workflow uses evaluation and feedback to revise generated work.",
+      "kind": "fact",
+      "source_ids": [
+        "S7"
+      ],
+      "confidence": "high",
+      "reason": "The pattern is explicitly described by the primary source.",
+      "verification": "verified",
+      "pivotal": false,
+      "time_sensitive": false
+    },
+    {
+      "id": "CL3",
+      "text": "Research evaluation benefits from different checks for groundedness, coverage and judgment.",
+      "kind": "fact",
+      "source_ids": [
+        "S8"
+      ],
+      "confidence": "high",
+      "reason": "The source distinguishes grader types and research-evaluation concerns.",
+      "verification": "verified",
+      "pivotal": true,
+      "time_sensitive": false
+    },
+    {
+      "id": "CL4",
+      "text": "Claude Code supports project instructions in CLAUDE.md.",
+      "kind": "fact",
+      "source_ids": [
+        "S9"
+      ],
+      "confidence": "high",
+      "reason": "Current documentation was retrieved.",
+      "verification": "verified",
+      "pivotal": false,
+      "time_sensitive": true
+    },
+    {
+      "id": "CL5",
+      "text": "GitHub Copilot documents repository instructions in .github/copilot-instructions.md.",
+      "kind": "fact",
+      "source_ids": [
+        "S10"
+      ],
+      "confidence": "high",
+      "reason": "Current documentation was retrieved; host support must be checked.",
+      "verification": "verified",
+      "pivotal": false,
+      "time_sensitive": true
+    },
+    {
+      "id": "CL6",
+      "text": "The supplied Python coordinator persists stages and binds reviews to canonical content fingerprints.",
+      "kind": "fact",
+      "source_ids": [
+        "S11"
+      ],
+      "confidence": "high",
+      "reason": "Implemented in loop.py and ArtifactStore.fingerprint/GateEngine._review.",
+      "verification": "verified",
+      "pivotal": true,
+      "time_sensitive": false
+    },
+    {
+      "id": "CL7",
+      "text": "Shared evidence, architecture and story records may reduce material drift in recurring architecture publications.",
+      "kind": "proposal",
+      "source_ids": [],
+      "confidence": "conditional",
+      "reason": "This is the central design hypothesis; a comparative evaluation is still needed.",
+      "verification": "not_applicable",
+      "pivotal": true,
+      "time_sensitive": false
+    },
+    {
+      "id": "CL8",
+      "text": "A writable local run folder is not a tamper-proof approval boundary.",
+      "kind": "inference",
+      "source_ids": [
+        "S11"
+      ],
+      "confidence": "conditional",
+      "reason": "The same writer can modify checks, state and review declarations.",
+      "verification": "not_applicable",
+      "pivotal": true,
+      "time_sensitive": false,
+      "could_change_if": "Execution and approval are separated by independently enforced permissions."
+    },
+    {
+      "id": "CL9",
+      "text": "The core coordinator and SVG/Mermaid generator do not call a model API or require a vendor SDK.",
+      "kind": "fact",
+      "source_ids": [
+        "S11"
+      ],
+      "confidence": "high",
+      "reason": "The shipped core imports Python standard-library modules only.",
+      "verification": "verified",
+      "pivotal": true,
+      "time_sensitive": false
+    },
+    {
+      "id": "CL10",
+      "text": "The example code-level diagram names actual classes in gates.py.",
+      "kind": "fact",
+      "source_ids": [
+        "S11",
+        "S5"
+      ],
+      "confidence": "high",
+      "reason": "GateEngine, ArtifactStore, Finding and ReviewStamp appear in the supplied module.",
+      "verification": "verified",
+      "pivotal": true,
+      "time_sensitive": false
+    },
+    {
+      "id": "CL11",
+      "text": "Adoption should depend on a bounded pilot against a simpler authoring baseline.",
+      "kind": "proposal",
+      "source_ids": [],
+      "confidence": "conditional",
+      "reason": "The extra process needs to demonstrate decision quality or lower material rework.",
+      "verification": "not_applicable",
+      "pivotal": true,
+      "time_sensitive": false
+    }
+  ],
+  "searches": [
+    {
+      "date": "2026-10-06",
+      "query": "site.c4model.com diagrams code component container system context",
+      "purpose": "support",
+      "result": "Read the C4 site and each relevant view definition."
+    },
+    {
+      "date": "2026-10-06",
+      "query": "site.anthropic.com engineering building effective agents evaluator optimizer workflows",
+      "purpose": "support",
+      "result": "Retrieved the original pattern description and the 2026 evaluation article."
+    },
+    {
+      "date": "2026-10-06",
+      "query": "site.code.claude.com/docs/en/memory CLAUDE.md",
+      "purpose": "support",
+      "result": "Read official project-instruction documentation."
+    },
+    {
+      "date": "2026-10-06",
+      "query": "site.docs.github.com copilot repository custom instructions .github copilot-instructions.md",
+      "purpose": "support",
+      "result": "Read official IDE repository-instruction documentation."
+    },
+    {
+      "date": "2026-10-06",
+      "query": "Disconfirm mandatory four levels: read https://c4model.com/diagrams and https://c4model.com/diagrams/code",
+      "purpose": "disconfirm",
+      "result": "Official C4 guidance does not require all four levels for all projects; this kit requires them only because the requested deliverable does."
+    },
+    {
+      "date": "2026-10-06",
+      "query": "Disconfirm automatic quality assurance: inspect grader limitations in https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents and local gates.py",
+      "purpose": "disconfirm",
+      "result": "Code checks cannot establish full factual or semantic quality; the recommendation explicitly preserves review and pilot requirements."
+    }
+  ],
+  "coverage": [
+    {
+      "question": "What do the four views mean?",
+      "answer": "Use original C4 definitions and parent containment.",
+      "status": "answered",
+      "critical": true,
+      "claim_ids": [
+        "CL1"
+      ]
+    },
+    {
+      "question": "Does this loop measurably improve publications?",
+      "answer": "Unknown; recommend only a controlled pilot.",
+      "status": "conditional",
+      "critical": true,
+      "claim_ids": [
+        "CL7",
+        "CL11"
+      ]
+    },
+    {
+      "question": "Can one prompt guarantee safety or truth?",
+      "answer": "No such claim is made; writable records and self-review are limited.",
+      "status": "answered",
+      "critical": true,
+      "claim_ids": [
+        "CL3",
+        "CL8"
+      ]
+    },
+    {
+      "question": "Will every host integration work unmodified?",
+      "answer": "Not established; conventions are documented, host sessions are untested.",
+      "status": "conditional",
+      "critical": true,
+      "claim_ids": [
+        "CL4",
+        "CL5",
+        "CL9"
+      ]
+    }
+  ],
+  "stop_reason": "Primary definitions and adapter conventions were retrieved. Product effectiveness and end-to-end host behavior require empirical trials; more general web searching would not resolve those gaps."
+}

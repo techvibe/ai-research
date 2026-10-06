@@ -1,0 +1,27 @@
+{
+  "topic": "",
+  "decision": "",
+  "author": "",
+  "audiences": [
+    "Engineering leaders",
+    "Engineers new to the topic"
+  ],
+  "as_of": "2026-10-06",
+  "success_criteria": [
+    "The recommendation is supported and its reversal conditions are explicit",
+    "A reader with no prior context can explain the mechanism and its limits",
+    "Paper and slides agree on claims, diagrams, units and caveats"
+  ],
+  "constraints": [],
+  "max_revisions": 3,
+  "max_prompts": 24,
+  "freshness_days": 30,
+  "require_independent_review": false,
+  "required_outputs": [
+    "pdf",
+    "pptx"
+  ],
+  "target_paper_words": 5000,
+  "target_core_slides": 14,
+  "research_budget_note": "Set a host time/cost limit; these word and slide targets are adjustable."
+}

@@ -1,0 +1,15 @@
+%% model-sha256: c6a42a18801e616c658a9046b5c8d31b48d8dbbefd3051923a7f8248449a902c
+%% C3 · Components inside the local coordinator
+%% Scope: Runner
+%% Teal = Python component within the selected coordinator. Blue = supporting data store. Outlined boundary marks the selected container.
+flowchart TB
+  subgraph scope_Runner["Local coordinator"]
+    Coordinator["Run coordinator (component; Python; loop.py main) - Advances or reopens a stage"]
+    Gates["Quality gates (component; Python; gates.py) - Checks records and review freshness"]
+    Prompts["Prompt assembly (component; Python; emit_prompt) - Emits the current stage task"]
+  end
+    Store["Run folder (container; JSON, Markdown and files) - Stores evidence, design, story and outputs"]
+  Coordinator -->|"Requests validation / Python call"| Gates
+  Coordinator -->|"Requests stage task / Python call"| Prompts
+  Coordinator -->|"Persists run state / Filesystem"| Store
+  Gates -->|"Reads records and hashes / Filesystem"| Store

@@ -1,0 +1,16 @@
+%% model-sha256: c6a42a18801e616c658a9046b5c8d31b48d8dbbefd3051923a7f8248449a902c
+%% C2 · Containers within Architecture Loop
+%% Scope: Loop
+%% Outlined boundary = kit ownership. Blue = application or data-store container. Gray = external host. Arrow labels include protocol.
+flowchart TB
+  subgraph scope_Loop["Architecture Loop"]
+    Runner["Local coordinator (container; Python 3.10+; loop.py) - Controls stages and checks prerequisites"]
+    Publisher["Publication renderer (container; Python; render.py) - Builds editable deck and paper PDF"]
+    Store["Run folder (container; JSON, Markdown and files) - Stores evidence, design, story and outputs"]
+  end
+    Host["Host agent (external) - Researches, designs, writes and reviews"]
+  Host -->|"Invokes stages / CLI"| Runner
+  Host -->|"Writes canonical records / Filesystem"| Store
+  Host -->|"Requests exports / CLI"| Publisher
+  Runner -->|"Checks and updates run state / Filesystem"| Store
+  Publisher -->|"Reads records; writes PDF/PPTX / Filesystem"| Store

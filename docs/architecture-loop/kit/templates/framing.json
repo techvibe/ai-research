@@ -1,0 +1,20 @@
+{
+  "context": "",
+  "problem": "",
+  "stakeholders": [],
+  "in_scope": [],
+  "out_of_scope": [],
+  "invariants": [],
+  "constraints": [],
+  "terms": {},
+  "questions": [],
+  "capabilities": {
+    "research": false,
+    "files": false,
+    "shell": false,
+    "render": false,
+    "independent_review": false
+  },
+  "reader_context_explained": false,
+  "assumptions_explicit": false
+}

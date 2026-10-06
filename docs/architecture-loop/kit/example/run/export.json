@@ -1,0 +1,26 @@
+{
+  "source_fingerprint": "bd268dc08fa4e69784be81017346aa6dc78cc25dd7cfa6e3dca90948315edaab",
+  "files": [
+    {
+      "path": "output/Architecture_Loop_Example_Paper.pdf",
+      "format": "pdf",
+      "sha256": "c0c1cba455bef02901b480239d2d9173c630d6e40b12946e7b7063f29eec7c59",
+      "inspected": true,
+      "inspection_notes": "11 rendered PDF pages inspected via contact sheet and detailed architecture views; text bounds and all four C4 figures verified."
+    },
+    {
+      "path": "output/Architecture_Loop_Example_Slides.pptx",
+      "format": "pptx",
+      "sha256": "dd6b6873f00fc0cc435312e1ed4862ca59e4d65b909181e004c2dc7a5a80319c",
+      "inspected": true,
+      "inspection_notes": "15 slides with notes; native editable shapes and XML package checked; bounds checked. Visual inspection used the shared-layout PDF proxy. No PowerPoint/LibreOffice engine available; font substitution remains possible."
+    },
+    {
+      "path": "output/Architecture_Loop_Example_Slides_Preview.pdf",
+      "format": "pdf",
+      "sha256": "65720b3e327d5f4f802b92fae6fcbb99cb417807932be3265227764cbae09134",
+      "inspected": true,
+      "inspection_notes": "All 15 preview pages inspected in contact sheet; all four diagram slides inspected at larger size. This is a layout proxy rather than a PowerPoint-engine render."
+    }
+  ]
+}
