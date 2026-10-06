@@ -1,0 +1,5 @@
+matplotlib==3.10.8
+reportlab==4.4.9
+python-pptx==1.0.2
+Pillow==12.3.0
+PyMuPDF==1.26.6

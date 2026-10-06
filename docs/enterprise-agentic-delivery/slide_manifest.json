@@ -1,0 +1,163 @@
+[
+  {
+    "number": 1,
+    "title": "Enterprise Agentic Delivery",
+    "kicker": "A small architecture that grows through outcomes",
+    "notes": "This deck follows the accompanying first-person white paper. It presents a design proposal, not a validated production platform. Product evidence was reviewed on 6 October 2026. The narrative begins with the challenge to control-plane necessity and ends with an evidence-gated investment decision.",
+    "sources": ""
+  },
+  {
+    "number": 2,
+    "title": "A control-plane product is optional. Its responsibilities may still be needed.",
+    "kicker": "The core finding",
+    "notes": "White paper \u00a72. A counterexample disproves the universal claim that every enterprise workflow needs a new centralized control plane. A protected dependency-upgrade PR can succeed through existing systems. Conversely, an ambiguous production effect still requires authorization and reconciliation somewhere. This is a distinction between function and topology.",
+    "sources": ""
+  },
+  {
+    "number": 3,
+    "title": "I tested both sides of the argument.",
+    "kicker": "Disconfirmation",
+    "notes": "White paper \u00a7\u00a72.2\u20132.4. My conclusion is conditional. I also challenge my own thin-layer recommendation: removal experiments must be permitted. Coordination is an investment, not an architectural virtue.",
+    "sources": ""
+  },
+  {
+    "number": 4,
+    "title": "The harnesses offer complementary patterns.",
+    "kicker": "Landscape / products",
+    "notes": "White paper \u00a7\u00a73.1\u20133.3. Cursor live documentation supports Enterprise with version 3.21.9 or later, unlike an older indexed result. Copilot Fleet SDK binding is experimental. Claude teams are confirmed, but detailed team semantics were not independently retrieved. Do not rank these products as universally strongest or infer production maturity from advertised scale.",
+    "sources": "White paper references [1\u201311, 27\u201329] \u00b7 Capabilities are documented; enterprise fit requires validation."
+  },
+  {
+    "number": 5,
+    "title": "Frameworks are alternatives, not layers to accumulate.",
+    "kicker": "Landscape / frameworks and open designs",
+    "notes": "White paper \u00a73.4. ChatDev 2.0 differs from its legacy virtual software company. Role simulation and workflow configuration are useful patterns, but are not evidence of enterprise production guarantees. Select one state owner and one primary harness initially.",
+    "sources": "White paper references [12\u201321] \u00b7 AutoGen is in maintenance mode."
+  },
+  {
+    "number": 6,
+    "title": "Three contracts keep the architecture small.",
+    "kicker": "The stable enterprise boundary",
+    "notes": "White paper \u00a74.1 and Appendix A. These contracts express enterprise semantics independently of a vendor\u2019s hidden plan or session. A planning result is a proposal; an evidence result is a supported observation; an action authorization is permission for a bound external effect.",
+    "sources": ""
+  },
+  {
+    "number": 7,
+    "title": "C1: the system fits into existing enterprise boundaries.",
+    "kicker": "Architecture / context",
+    "notes": "White paper \u00a74.3 / Figure 1. This is a C4 system-context view. The system can be domain operated. The harness is external because its lifecycle and trust boundary differ from the delivery system. References [22] establishes the C4 notation levels.\nPresenter emphasis:\nPeople own outcomes.\nHarnesses reason and create.\nEnterprise systems authorize and execute.\nService observations establish results.",
+    "sources": ""
+  },
+  {
+    "number": 8,
+    "title": "C2: reuse trusted executors; keep agents outside production authority.",
+    "kicker": "Architecture / containers",
+    "notes": "White paper \u00a7\u00a74.2 and 4.4 / Figure 2. Target logical implementation, not the minimum Stage 1 deployment. A gateway is ineffective if agents retain alternate privileged routes. Credentials, management-network paths and protected verification jobs must enforce the boundary. Database/object store roles should reuse established services.\nPresenter emphasis:\nOutcome Service: add only if state has gaps.\nWorker Gateway: native harness integration.\nAction Gateway: existing executor can supply it.\nWorkflow Runner: optional.",
+    "sources": ""
+  },
+  {
+    "number": 9,
+    "title": "C3: deterministic transitions surround flexible planning.",
+    "kicker": "Architecture / components",
+    "notes": "White paper \u00a74.5 / Figure 3. This zooms into the Outcome Service container. Separate modules do not imply microservices. Enterprise readiness depends on ownership and enforceable behavior rather than the number of boxes.\nPresenter emphasis:\nPlanning proposes.\nVerification checks exact evidence.\nPolicy authorizes.\nReconciliation resolves uncertain effects.\nStart as modules in one application.",
+    "sources": ""
+  },
+  {
+    "number": 10,
+    "title": "C4: the code boundary handles uncertainty explicitly.",
+    "kicker": "Architecture / code",
+    "notes": "White paper \u00a74.6 / Figure 4. Planned interfaces, not deployed code. ActionDispatcher depends on ActionRequest, PolicyAuthority, ActionExecutor and EffectRepository. Use request hashes, optimistic versions, outbox/inbox, operation IDs and fencing where supported. There is no universal exactly-once transaction across arbitrary tools.\nPresenter emphasis:\nReserve a unique operation.\nRecheck current authority.\nApply with executor guarantees.\nInspect after lost response.\nDo not retry unknown non-idempotent effects.",
+    "sources": ""
+  },
+  {
+    "number": 11,
+    "title": "Completion means the intended outcome was verified.",
+    "kicker": "Lifecycle",
+    "notes": "White paper \u00a7\u00a75.1, 7.3. Agent completion and business completion are separate. Defined, Active, Waiting, Ready for Action, Acting, Observing, Completed, Failed, Cancelled and Indeterminate are coarse outcome states. Domain acceptance defines their criteria.",
+    "sources": ""
+  },
+  {
+    "number": 12,
+    "title": "Run useful checks early; retain independent enforcement.",
+    "kicker": "Evidence",
+    "notes": "White paper \u00a7\u00a76.1\u20136.2. Local checks reduce rework but do not automatically become release evidence. Protected suites and independent producers prevent the builder from defining success through its own assertions. SLSA provenance provides build lineage, not a correctness guarantee. Source [25].",
+    "sources": ""
+  },
+  {
+    "number": 13,
+    "title": "The hard cases are external effects and bypass paths.",
+    "kicker": "Failure and security",
+    "notes": "White paper \u00a7\u00a76.3 and 7.1. Also test duplicate events, unavailable policy, unavailable telemetry, cancellation with in-flight effects, and cross-domain access. A controller may finish a previously authorized bounded safety sequence during an outage; new privileged actions remain blocked.",
+    "sources": ""
+  },
+  {
+    "number": 14,
+    "title": "Memory improves work only if its learning can be evaluated and reversed.",
+    "kicker": "Governed learning",
+    "notes": "White paper \u00a76.4. Vector retrieval is optional. Access checks, freshness, deletion and demonstrable improvement justify adding it. A successful run can propose knowledge; it does not grant permission to rewrite policy.",
+    "sources": ""
+  },
+  {
+    "number": 15,
+    "title": "Stages 0\u20132 already deliver useful results.",
+    "kicker": "Build through value gates",
+    "notes": "White paper \u00a7\u00a78.1\u20138.3. Illustrative pilot: 20\u201330 comparable tasks where diversity permits, and a proposed 20% median human-effort reduction without material quality decline. These are proposed targets, not empirical forecasts. Small cohorts cannot prove rare-event safety.",
+    "sources": ""
+  },
+  {
+    "number": 16,
+    "title": "Stages 3\u20135 expand only after evidence supports them.",
+    "kicker": "Build through value gates",
+    "notes": "White paper \u00a7\u00a78.4\u20138.7. No fixed delivery dates without team and readiness information. Every stage has standalone value and stopping criteria. Central portfolio scheduling appears only if observed domain coordination requires it.",
+    "sources": ""
+  },
+  {
+    "number": 17,
+    "title": "The same contracts support many enterprise outcomes.",
+    "kicker": "Mature scope",
+    "notes": "White paper \u00a77.3. Each family has distinct evidence, risk, and recovery rules. Data and irreversible migration actions require additional domain validation. Success with upgrades does not authorize production database repair.",
+    "sources": ""
+  },
+  {
+    "number": 18,
+    "title": "CI/CD products retire only after their functions are replaced safely.",
+    "kicker": "Migration",
+    "notes": "White paper \u00a710. Distinguish product redundancy from function redundancy. Evaluate isolation, provenance, concurrency, cancellation, authorization, observation and recovery before retiring an incumbent. Keep one reversible workflow migration route.",
+    "sources": ""
+  },
+  {
+    "number": 19,
+    "title": "Measure accepted outcomes, total effort and service effects.",
+    "kicker": "Economics",
+    "notes": "White paper \u00a79. PR count alone is not value. Include failed and abandoned tasks. Distinguish commit-to-production lead time from production workflow duration. The paper\u2019s 80-hour net savings example is illustrative arithmetic, not a forecast.",
+    "sources": ""
+  },
+  {
+    "number": 20,
+    "title": "I would fund one pilot and preserve the right to simplify.",
+    "kicker": "Decision",
+    "notes": "White paper \u00a7\u00a711\u201313. Test removal of the custom service, single-agent versus fleet, native state versus outer workflow, memory versus no memory, and incumbent versus replacement execution. These tests can overturn the design. The recommendation is an actionable pilot, not a request to build every target component.",
+    "sources": ""
+  },
+  {
+    "number": 21,
+    "title": "Evidence limits are part of the recommendation.",
+    "kicker": "Research boundary",
+    "notes": "White paper \u00a71.3 and Appendix C. The slide deck and paper are a cohesive design proposal. The live Cursor page superseded an indexed restriction. AutoGen maintenance status was checked in the maintained repository. Claude team existence is verified; detailed team lifecycle guarantees remain a validation question.",
+    "sources": ""
+  },
+  {
+    "number": 22,
+    "title": "Primary-source ledger",
+    "kicker": "References 1\u201315",
+    "notes": "Full URLs, supported claims and implementation questions are in white paper Appendix C. All references were consulted on 6 October 2026.\n[1] Cursor, Introducing Projects \u2014 https://cursor.com/blog/projects \u2014 Coordinator, persistent context and recurring work\n[2] GitHub, Fleet mode \u2014 https://docs.github.com/en/copilot/how-tos/copilot-sdk/features/fleet-mode \u2014 Parent/subagent pattern, explicit task dependencies, experimental binding and suitability limits\n[3] Anthropic, Agent SDK overview \u2014 https://code.claude.com/docs/en/agent-sdk/overview \u2014 Programmable coding loop, tools, sessions, hooks, permissions, MCP and subagents\n[4] Anthropic, Claude Opus 4.6 announcement \u2014 https://www.anthropic.com/news/claude-opus-4-6 \u2014 Existence of Claude Code agent teams; does not establish current detailed team semantics\n[5] OpenAI, Agents API architecture \u2014 https://developers.openai.com/api/docs/guides/agents-api/architecture \u2014 Managed harness, application server and environment separation\n[6] OpenAI, Agents overview \u2014 https://developers.openai.com/api/docs/guides/agents \u2014 Agents API versus Agents SDK and application-owned orchestration choices\n[7] Factory, Missions overview \u2014 https://docs.factory.com/missions/overview \u2014 Planned mission orchestration for bounded multi-feature work\n[8] Factory, Planning and Validation \u2014 https://docs.factory.com/missions/planning \u2014 Milestones, validation workers and configurable validation\n[9] Factory, Running in the Factory App \u2014 https://docs.factory.com/missions/running-app \u2014 Mission visibility, resumption and remote Droid Computers\n[10] Kiro, Invoking as sub-agents \u2014 https://kiro.dev/docs/custom-agents/subagents/ \u2014 Independent contexts, shared workspace, dependencies and bounded review loops\n[11] AWS, DevOps Agent expansion \u2014 https://aws.amazon.com/about-aws/whats-new/2026/06/aws-devops-agent-custom-agents/ \u2014 Custom SRE agents, bring-your-own subagents, MCP/A2A operational access\n[12] Google ADK, Workflows \u2014 https://adk.dev/workflows/ \u2014 Graph, dynamic, collaborative and template workflows\n[13] LangChain, LangGraph Persistence \u2014 https://docs.langchain.com/oss/python/langgraph/persistence \u2014 Checkpointers and longer-term stores\n[14] LangChain, Deep Agents overview \u2014 https://docs.langchain.com/oss/javascript/deepagents/overview \u2014 Harness facilities, context, tools, delegation and steering\n[15] Microsoft, AutoGen maintained repository \u2014 https://github.com/microsoft/autogen \u2014 Maintenance status and recommendation to use Microsoft Agent Framework",
+    "sources": ""
+  },
+  {
+    "number": 23,
+    "title": "Primary-source ledger",
+    "kicker": "References 16\u201329",
+    "notes": "Full URLs, supported claims and implementation questions are in white paper Appendix C. All references were consulted on 6 October 2026.\n[16] Microsoft, Agent Framework checkpoints \u2014 https://learn.microsoft.com/en-us/agent-framework/workflows/checkpoints \u2014 Workflow checkpoint and restore capabilities\n[17] CrewAI, Flows \u2014 https://docs.crewai.com/en/concepts/flows \u2014 Structured/event-driven flows and state persistence\n[18] OpenHands, software-agent SDK \u2014 https://github.com/OpenHands/software-agent-sdk \u2014 Modular software-agent SDK and execution infrastructure\n[19] OpenHands, delegation example \u2014 https://github.com/OpenHands/software-agent-sdk/blob/main/examples/01_standalone_sdk/25_agent_delegation.py \u2014 Maintained example of software-agent delegation\n[20] FoundationAgents, MetaGPT \u2014 https://github.com/FoundationAgents/MetaGPT \u2014 Role-based software organization and structured operating procedures\n[21] OpenBMB, ChatDev \u2014 https://github.com/OpenBMB/ChatDev \u2014 Legacy virtual software company versus current 2.0 configurable platform\n[22] C4 model, Diagrams \u2014 https://c4model.com/diagrams \u2014 Context/container/component/code levels and selective use\n[23] MCP, Security Best Practices \u2014 https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices \u2014 Tool security considerations including confused deputy and token handling\n[24] A2A, Specification \u2014 https://a2a-protocol.org/latest/specification/ \u2014 Agent cards, task communication, authentication and capability semantics\n[25] SLSA, Provenance v1.1 \u2014 https://slsa.dev/spec/v1.1/provenance \u2014 Build input and producer provenance structure\n[26] Temporal, Workflow Execution \u2014 https://docs.temporal.io/workflow-execution \u2014 Event-history replay and durable workflow recovery\n[27] Factory, Missions Reference \u2014 https://docs.factory.com/missions/reference \u2014 Configuration inheritance and headless mission execution\n[28] OpenAI, Agents API overview \u2014 https://developers.openai.com/api/docs/guides/agents-api/overview \u2014 Managed sessions, context management, delegation and recovery\n[29] Cursor, Projects documentation \u2014 https://cursor.com/docs/agent/projects \u2014 Live Enterprise/version and legacy Privacy Mode restrictions; discrepancy with indexed snapshot",
+    "sources": ""
+  }
+]

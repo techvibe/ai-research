@@ -34,3 +34,12 @@ The worked example includes an [11-page paper](docs/architecture-loop/Architectu
 
 Seventeen local regression checks passed. Live host integration and comparative effectiveness remain untested; [validation details and limitations](docs/architecture-loop/kit/VALIDATION.md) are included.
 
+## Enterprise agentic delivery
+
+[Read the white paper (PDF)](docs/enterprise-agentic-delivery/Enterprise_Agentic_Delivery_White_Paper.pdf) · [Read online](docs/enterprise-agentic-delivery/Enterprise_Agentic_Delivery_White_Paper.md) · [Editable slides](docs/enterprise-agentic-delivery/Enterprise_Agentic_Delivery_Slides.pptx) · [Slide preview](docs/enterprise-agentic-delivery/Enterprise_Agentic_Delivery_Slides.pdf)
+
+**Enterprise Agentic Delivery: A small, enforceable architecture that grows through demonstrated outcomes** — version 1.0, 6 October 2026.
+
+A first-person white paper testing whether a separate centralized control-plane product is necessary. Compares 13 architecture families, derives outcome/evidence/action contracts, provides C1–C4 views, and develops a six-stage value-gated roadmap from accepted pull requests through verified delivery and operational outcomes. Includes failure reconciliation, authority boundaries, governed learning, economics, disconfirmation experiments, 29 primary sources and a 23-slide presentation.
+
+The recommendation is conditional: start with one harness and existing controls; add durable coordination only for demonstrated gaps. This is a design proposal, not a production-validated platform. [Publication guide, sources and validation](docs/enterprise-agentic-delivery/README.md).
